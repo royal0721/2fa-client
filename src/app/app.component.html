@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h2>2FA QR Code 示意 (首次啟用 2FA)</h2>
+  <p>此 Demo 為首次啟用測試，若要重複使用請重新掃 QR Code</p>
+  <button (click)="generateQRCode()">產生 QR Code</button>
+
+  <div *ngIf="qrCode">
+    <p>請掃描以下 QR Code：</p>
+    <img [src]="qrCode" alt="QR Code" />
+
+    <p>請輸入 TOTP Code：</p>
+    <input class="mr-2" [(ngModel)]="token" placeholder="輸入 6 位數代碼" />
+    <button (click)="verifyToken()">驗證</button>
+
+    <p *ngIf="verifyResult !== null">
+      <span *ngIf="verifyResult; else fail">驗證成功！</span>
+      <ng-template #fail>驗證失敗，請再試一次</ng-template>
+    </p>
+  </div>
+</div>
