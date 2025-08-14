@@ -729,6 +729,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -812,7 +813,6 @@
               ]
             },
             "id": "31276685-f096-4896-9156-006547799ab0",
-            "zIndex": 13,
             "data": {
               "type": "tm.Store",
               "name": "Database",
